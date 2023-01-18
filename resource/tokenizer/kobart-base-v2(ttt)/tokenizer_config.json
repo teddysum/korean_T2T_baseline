@@ -1,0 +1,5 @@
+{
+  "name_or_path": "gogamza/kobart-base-v2",
+  "special_tokens_map_file": "/root/.cache/huggingface/hub/models--gogamza--kobart-base-v2/snapshots/f9f2ec35d3c32a1ecc7a3281f9626b7ec1913fed/special_tokens_map.json",
+  "tokenizer_class": "PreTrainedTokenizerFast"
+}
