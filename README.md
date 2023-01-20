@@ -139,6 +139,6 @@ python -m run scoring \
 
 ### Reference
 
-huggingface/transformers (https://github.com/huggingface/transformers)
-SKT-AI/KoBART (https://github.com/SKT-AI/KoBART)
-국립국어원 모두의말뭉치 (https://corpus.korean.go.kr/)
+huggingface/transformers (https://github.com/huggingface/transformers)  
+SKT-AI/KoBART (https://github.com/SKT-AI/KoBART)  
+국립국어원 모두의말뭉치 (https://corpus.korean.go.kr/)  
