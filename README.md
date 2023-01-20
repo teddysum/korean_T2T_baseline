@@ -137,7 +137,7 @@ python -m run scoring \
 - Inference output을 이용해 채점을 진행합니다.
 - 기본적으로 Rouge-1과 BLEU를 제공합니다.
 
-### Reference
+## Reference
 
 huggingface/transformers (https://github.com/huggingface/transformers)  
 SKT-AI/KoBART (https://github.com/SKT-AI/KoBART)  
