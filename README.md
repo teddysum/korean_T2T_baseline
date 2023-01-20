@@ -1,5 +1,7 @@
 # Table-to-Text Baseline
-본 리포지토리는 2023 국립국어원 인공 지능 언어 능력 평가 중 Table-to-Text의 베이스라인 모델 및 해당 모델의 재현을 위한 소스 코드를 포함하고 있습니다.  
+본 소스 코드는 '국립국어원 인공 지능 언어 능력 평가' 시범 운영 과제 중 '표 기반 문장 생성' 과제 베이스라인 모델 및 학습과 평가를 위한 코드입니다.
+
+학습 및 추론, 평가는 아래의 실행 방법(How to Run)에서 확인하실 수 있습니다.  
 <br>
 본 베이스라인 코드를 이용해서 pretrained model을 학습한 결과입니다.
 |Model|ROUGE-1|BLUE|
@@ -7,7 +9,7 @@
 |TeddyBART|0.4446|0.4398|
 |KoBART|0.4147|0.4246|
 
-## Directory Structue
+## 디렉토리 구조(Directory Structure)
 ```
 # 학습에 필요한 리소스들이 들어있습니다.
 resource
@@ -26,8 +28,8 @@ src
 └── utils.py
 ```
 
-## Data
-### Raw data
+## 데이터(Data)
+### 제공 데이터
 ```
 {
     "id": "nikluge-2022-table-dev-000001",
@@ -67,7 +69,7 @@ src
 ```
 데이터의 경우 입력 `"table"`, 출력 `"output"`이 됩니다. Baseline 모델에서 사용한 데이터 전처리 과정을 통하면 아래와 같은 형태가 됩니다.
 
-### Data after pre-processing
+### 데이터 전처리
 ```
 {
     "table": [
@@ -86,7 +88,7 @@ src
 ```
 학습 데이터는 대부분 복수 정답으로 구성되어 있기 때문에, baseline 모델의 경우 위와 같이 중복된 입력 데이터를 이용했습니다.
 
-## Installation
+## 설치(Installation)
 Execute it, if mecab is not installed
 ```
 ./install_mecab.sh
@@ -97,8 +99,8 @@ Install python dependency
 pip install -r requirements.txt
 ```
 
-## How to Run
-### Train
+## 실행 방법(How to Run)
+### 학습(Train)
 ```
 python -m run train \
     --output-dir outputs/ttt \
@@ -113,7 +115,7 @@ python -m run train \
 - BART 외의 pretrained model을 이용해서 학습하고 싶은 경우, 코드를 수정할 필요가 있습니다.
 - 학습 로그 및 모델은 지정한 `output-dir`에 저장됩니다.
 
-### Inference
+### 추론(Inference)
 ```
 python -m run inference \
     --model-ckpt-path outputs/ttt/<your-model-ckpt-path> \
@@ -127,10 +129,16 @@ python -m run inference \
 - `transformers` 모델을 불러와 inference를 진행합니다.
 - Inference 시 출력 데이터는 jsonl format으로 저장되며, "output"의 경우 입력 데이터와 다르게 `list`가 아닌 `string`이 됩니다.
 
-### Scoring
+### 채점(scoring)
 ```
 python -m run scoring \
     --candidate-path <your-candidate-file-path>
 ```
 - Inference output을 이용해 채점을 진행합니다.
 - 기본적으로 Rouge-1과 BLEU를 제공합니다.
+
+### Reference
+
+huggingface/transformers (https://github.com/huggingface/transformers)
+SKT-AI/KoBART (https://github.com/SKT-AI/KoBART)
+국립국어원 모두의말뭉치 (https://corpus.korean.go.kr/)
