@@ -1,5 +1,5 @@
 # Table-to-Text Baseline
-본 소스 코드는 '국립국어원 인공 지능 언어 능력 평가' 시범 운영 과제 중 '표 기반 문장 생성' 과제 베이스라인 모델 및 학습과 평가를 위한 코드입니다.
+본 소스 코드는 '국립국어원 인공지능의 한국어 능력 평가' 시범 운영 과제 중 '표 기반 문장 생성' 과제 베이스라인 모델 및 학습과 평가를 위한 코드입니다.
 
 학습 및 추론, 평가는 아래의 실행 방법(How to Run)에서 확인하실 수 있습니다.  
 
@@ -140,4 +140,4 @@ python -m run scoring \
 
 huggingface/transformers (https://github.com/huggingface/transformers)  
 SKT-AI/KoBART (https://github.com/SKT-AI/KoBART)  
-국립국어원 모두의말뭉치 (https://corpus.korean.go.kr/)  
+국립국어원 인공지능 (AI)말평 (https://kli.korean.go.kr/benchmark)   
